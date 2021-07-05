@@ -1,0 +1,6 @@
+transformers
+pandas
+torch
+numpy==1.19.4
+scipy
+sklearn
