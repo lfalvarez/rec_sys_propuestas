@@ -25,7 +25,7 @@ def to_json(df, filename):
 if __name__ == '__main__':
     df_proposals = pd.read_csv('propuestas.csv')
     df = pd.read_csv('compromisos.csv')
-    df = df.loc[df['id'].isin(df_proposals.id)].reset_index().drop(['index',], axis=1)
+    df = df.loc[df['proposal'].isin(df_proposals.id)].reset_index().drop(['index',], axis=1)
     train, validate, test = train_validate_test_split(df, train_percent=.7, validate_percent=.15)
     to_json(train, "data/compromisos_train.json")
     to_json(validate, "data/compromisos_validate.json")
